@@ -85,7 +85,7 @@ public class JavaStreams {
         rows2.close();*/
 
         //12. Stream rows from CSV file, store fields in HashMap
-        Stream<String> rows3 = Files.lines(Paths.get("C:\\Users\\LukaszP\\IdeaProjects\\Streams\\src\\data.txt"));
+        /*Stream<String> rows3 = Files.lines(Paths.get("C:\\Users\\LukaszP\\IdeaProjects\\Streams\\src\\data.txt"));
         Map<String,Integer> map = new HashMap<>();
         map = rows3
                 .map(x -> x.split(","))
@@ -97,6 +97,10 @@ public class JavaStreams {
                 rows3.close();
                 for (String key : map.keySet()) {
                     System.out.println(key + " " + map.get(key));
-                }
+                }*/
+        //13. Reduction - sum
+        double total = Stream.of(7.3,1.5,4.8)
+                .reduce(0.0, (Double a, Double b) -> a + b);
+        System.out.println("Total = " + total);
         }
     }
